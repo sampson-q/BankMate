@@ -31,7 +31,7 @@ public class BankMateMain {
                 System.out.println("Transfers?");
                 break;
             default:
-                System.out.println("Wrong choice. Try again.");
+                System.out.println("Wrong choice. Try again later.");
         }
     }
 }
