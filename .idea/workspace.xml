@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e04a3ffc-c697-47fa-98e6-4ea4b93db951" name="Changes" comment="user signup...">
-      <change afterPath="$PROJECT_DIR$/src/BankMateMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/UserLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BankMate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BankMate.iml" afterDir="false" />
+    <list default="true" id="e04a3ffc-c697-47fa-98e6-4ea4b93db951" name="Changes" comment="codebase...">
+      <change beforePath="$PROJECT_DIR$/src/BankMateMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankMateMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
@@ -39,7 +40,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "interface",
     "last_opened_file_path": "C:/Users/hash/Downloads/mysql-connector-j-8.1.0/mysql-connector-j-8.1.0.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -85,7 +86,31 @@
       <option name="project" value="LOCAL" />
       <updated>1698105941237</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="user signup...">
+      <option name="closed" value="true" />
+      <created>1698107372890</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698107372890</updated>
+    </task>
+    <task id="LOCAL-00004" summary="login... might be discarded">
+      <option name="closed" value="true" />
+      <created>1698107453480</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698107453480</updated>
+    </task>
+    <task id="LOCAL-00005" summary="codebase...">
+      <option name="closed" value="true" />
+      <created>1698107483656</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698107483656</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -102,6 +127,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="database connectivity setup" />
     <MESSAGE value="user signup..." />
-    <option name="LAST_COMMIT_MESSAGE" value="user signup..." />
+    <MESSAGE value="login... might be discarded" />
+    <MESSAGE value="codebase..." />
+    <option name="LAST_COMMIT_MESSAGE" value="codebase..." />
   </component>
 </project>
