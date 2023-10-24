@@ -36,12 +36,12 @@ public class Loans {
     void loanApply() {
         System.out.print("Loan Amount: ");
         String loanAmount = loanInput.nextLine();
-        System.out.println("Loan processed!");
+        System.out.println("Loan processed! " + loanAmount);
     }
     void loanRepay() {
         System.out.print("Repay Amount: ");
         String repayAmount = loanInput.nextLine();
-        System.out.println("Loan paid!");
+        System.out.println("Loan paid! " + repayAmount);
     }
     void goBack() {
         System.out.println("Will work on go back");
