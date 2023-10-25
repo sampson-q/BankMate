@@ -53,18 +53,24 @@ public class Home extends Dashboard {
             controller.setActiveAccountNumber(phoneNumber);
 
             if (controller.saveAccountDetails()) {
-                System.out.println("\nSignup Success!\n[1] Login\n[C] Cancel");
-                String loginChoice = choiceInput.nextLine();
+                controller.setActiveAccountID();
 
-                switch (loginChoice) {
-                    case "1":
-                        userLogin();
-                        break;
-                    case "C", "c":
-                        System.out.println("Cancelled");
-                        break;
-                    default:
-                        System.out.println("Wrong input");
+                if (controller.saveLoanDetails()) {
+                    System.out.println("\nSignup Success!\n[1] Login\n[C] Cancel");
+                    String loginChoice = choiceInput.nextLine();
+
+                    switch (loginChoice) {
+                        case "1":
+                            userLogin();
+                            break;
+                        case "C", "c":
+                            System.out.println("Cancelled");
+                            break;
+                        default:
+                            System.out.println("Wrong input");
+                    }
+                } else {
+                    System.out.println("Account creation failed. Loans");
                 }
             } else {
                 System.out.println("Account creation failed");
