@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DatabaseConnection {
     // uncomment likes 9 and 10
     // String dbIP = "0.4";
-    // private static final String JDBC_URL = "jdbc:mysql://192.168.:3306/b_mate";
+    // private static final String JDBC_URL = "jdbc:mysql://192.168." + dbIP + ":3306/b_mate";
 
     // comment line 13
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/b_mate";
