@@ -4,27 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="e04a3ffc-c697-47fa-98e6-4ea4b93db951" name="Changes" comment="user signup..." />
       <change afterPath="$PROJECT_DIR$/src/BankMateMain.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/controllers/UserLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankMate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BankMate.iml" afterDir="false" />
-    <list default="true" id="e04a3ffc-c697-47fa-98e6-4ea4b93db951" name="Changes" comment="codebase...">
+    <list default="true" id="e04a3ffc-c697-47fa-98e6-4ea4b93db951" name="Changes" comment="codebase..." />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-=======
     <list default="true" id="e04a3ffc-c697-47fa-98e6-4ea4b93db951" name="Changes" comment="user signup...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankMate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BankMate.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BankMateMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankMateMain.java" afterDir="false" />
->>>>>>> withdrawal
       <change beforePath="$PROJECT_DIR$/src/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home/Home.java" afterDir="false" />
-<<<<<<< HEAD
-=======
       <change beforePath="$PROJECT_DIR$/src/withdrawal/Withdrawal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/withdrawal/Withdrawal.java" afterDir="false" />
->>>>>>> withdrawal
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-<<<<<<< HEAD
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
-=======
-=======
->>>>>>> withdrawal
+  <component name="ProjectColorInfo"><![CDATA[{"associatedIndex": 1}]]></component>
   <component name="GitHubPullRequestSearchHistory">{
     &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
