@@ -93,6 +93,7 @@ public class Home extends Dashboard {
                 break;
             default:
                 System.out.println("Wrong choice. Try again later.");
+                break;
         }
     }
 

@@ -11,6 +11,7 @@ public class Dashboard {
         System.out.println("\n========================================\nW e l c o m e    t o    B a n k M a t e\n\t\tyour financial companion\n==========> D A S H B O A R D <=========");
         System.out.println("   [1] Loans\n   [2] Withdrawal\n   [3] Deposit\n   [4] Transfers");
 
+        System.out.print("Enter choice: ");
         String choice = dashboardInput.nextLine();
 
         choiceHandler(choice);

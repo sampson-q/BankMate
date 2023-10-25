@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.util.Scanner;
 import java.sql.Statement;
 
-
 public class Withdrawal {
     Controller controller = new Controller();
     Scanner withdrawalInput = new Scanner(System.in);
