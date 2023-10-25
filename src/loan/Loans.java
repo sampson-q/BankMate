@@ -35,13 +35,13 @@ public class Loans {
 
     void loanApply() {
         System.out.print("Loan Amount: ");
-        String loanAmount = loanInput.nextLine();
-        System.out.println("Loan processed! " + loanAmount);
+        Double loanAmount = loanInput.nextDouble();
+        System.out.print("Loan processed! ");
     }
     void loanRepay() {
         System.out.print("Repay Amount: ");
-        String repayAmount = loanInput.nextLine();
-        System.out.println("Loan paid! " + repayAmount);
+        Double repayAmount = loanInput.nextDouble();
+        System.out.println("Loan paid! ");
     }
     void goBack() {
         System.out.println("Will work on go back");
