@@ -5,15 +5,12 @@ import dbConnectivity.DatabaseConnection;
 import java.math.BigDecimal;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.logging.Logger;
 
 public class Controller {
-    String activeAccountNumber, activeAccountID, activeAccountName;
-    Integer activeAccountLoanID;
+    String activeAccountNumber, activeAccountName;
+    Integer activeAccountID, activeAccountLoanID, activeUserID;
     BigDecimal activeAccountBalance, activeAccountLoanBalance;
     private static final Logger logger = Logger.getLogger(UserSignup.class.getName());
 
@@ -84,19 +81,46 @@ public class Controller {
         return false; // Default to false in case of an error
     }
 
-    public String getActiveAccountID() {
+    public boolean saveAccountDetails() {
+        int userId = getActiveUserID();
+        String phoneNumber = getActiveAccountNumber();
+        String insertAccountSQL = "INSERT INTO accounts (user_id, account_number, account_balance) VALUES (?, ?, ?)";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement insertStatement = connection.prepareStatement(insertAccountSQL, Statement.RETURN_GENERATED_KEYS)) {
+
+            insertStatement.setInt(1, userId);
+            insertStatement.setString(2, phoneNumber);
+            insertStatement.setBigDecimal(3, BigDecimal.ZERO); // Initial account balance is 0.00
+
+            int affectedRows = insertStatement.executeUpdate();
+            if (affectedRows > 0) {
+                ResultSet generatedKeys = insertStatement.getGeneratedKeys();
+                return generatedKeys.next();
+            } else {
+                return false;
+            }
+
+        } catch (SQLException e) {
+            // Handle SQL exception
+            System.out.println("Account creation failed: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public Integer getActiveAccountID() {
         return activeAccountID;
     }
 
     public void setActiveAccountID() {
-        String accountNumberSQL = "SELECT account_id FROM accounts WHERE phone_number = ?";
+        String accountNumberSQL = "SELECT account_id FROM accounts WHERE account_number = ?";
         try (Connection connection = DatabaseConnection.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(accountNumberSQL)) {
             preparedStatement.setString(1, getActiveAccountNumber());
             ResultSet resultSet = preparedStatement.executeQuery();
 
 
             if (resultSet.next()) {
-                this.activeAccountID = resultSet.getString("account_id"); // set up account ID
+                this.activeAccountID = resultSet.getInt("account_id"); // set up account ID
             } else {
                 System.out.println("Account not found for the given phone number.");
             }
@@ -137,7 +161,7 @@ public class Controller {
     }
 
     public void setActiveAccountBalance() {
-        String accountBalanceSQL = "SELECT account_balance FROM accounts WHERE phone_number = ?";
+        String accountBalanceSQL = "SELECT account_balance FROM accounts WHERE account_number = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(accountBalanceSQL)) {
@@ -164,7 +188,7 @@ public class Controller {
         String loanBalanceSQL = "SELECT L.loan_balance " +
                 "FROM loans L " +
                 "JOIN accounts A ON L.account_id = A.account_id " +
-                "JOIN users U ON A.phone_number = U.phone_number " +
+                "JOIN users U ON A.account_number = U.phone_number " +
                 "WHERE U.phone_number = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
@@ -217,5 +241,25 @@ public class Controller {
 
     public String getActiveAccountNumber() {
         return this.activeAccountNumber;
+    }
+
+    public void setActiveUserID(String phoneNumber) {
+        String sql = "SELECT user_id FROM users WHERE phone_number = ?";
+
+        try (Connection connection = DatabaseConnection.getConnection();PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, phoneNumber);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    this.activeUserID = resultSet.getInt("user_id");
+                }
+            }
+        } catch (SQLException e) {
+            logger.log(java.util.logging.Level.SEVERE, "An error occurred during loan ID fetch:", e);
+        }
+    }
+
+    public Integer getActiveUserID() {
+        return this.activeUserID;
     }
 }
