@@ -20,9 +20,8 @@ public class UserLogin {
             return false;
         }
 
-        String sql = "SELECT * FROM users WHERE account_number = ? AND pin_code = ?";
-        try (Connection connection = DatabaseConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        String validateAccountSQL = "SELECT * FROM users WHERE phone_number = ? AND pin_code = ?";
+        try (Connection connection = DatabaseConnection.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(validateAccountSQL)) {
             preparedStatement.setString(1, accountNumber);
             preparedStatement.setString(2, hashedPin);
             ResultSet resultSet = preparedStatement.executeQuery();
