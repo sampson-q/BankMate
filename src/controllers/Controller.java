@@ -233,27 +233,19 @@ public class Controller {
     }
 
     public void setActiveAccountLoanID() {
-        String loanIdSQL = "SELECT L.loan_id " +
-                "FROM loans L " +
-                "JOIN accounts A ON L.account_id = A.account_id " +
-                "JOIN users U ON A.phone_number = U.phone_number " +
-                "WHERE U.phone_number = ?";
+        String loanIDSQL = "SELECT loan_id FROM loans WHERE account_id = ?";
 
-        try (Connection connection = DatabaseConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(loanIdSQL)) {
-            preparedStatement.setString(1, getActiveAccountNumber());
-            ResultSet resultSet = preparedStatement.executeQuery();
+        try (Connection connection = DatabaseConnection.getConnection();PreparedStatement statement = connection.prepareStatement(loanIDSQL)) {
+            statement.setInt(1, getActiveAccountID());
 
-            if (resultSet.next()) {
-                this.activeAccountLoanID = resultSet.getInt("loan_id");
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    this.activeAccountLoanID = resultSet.getInt("loan_id");
+                }
             }
-
-            // Close resources
-            resultSet.close();
         } catch (SQLException e) {
             logger.log(java.util.logging.Level.SEVERE, "An error occurred during loan ID fetch:", e);
         }
-
     }
 
     public void setActiveAccountNumber(String activeAccountNumber) {
