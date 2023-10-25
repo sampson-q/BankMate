@@ -108,6 +108,31 @@ public class Controller {
         }
     }
 
+    public boolean saveLoanDetails() {
+        int accountID = getActiveAccountID();
+        String insertAccountSQL = "INSERT INTO loans (account_id, loan_balance, interest_rate) VALUES (?, ?, ?)";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement insertStatement = connection.prepareStatement(insertAccountSQL, Statement.RETURN_GENERATED_KEYS)) {
+
+            insertStatement.setInt(1, accountID);
+            insertStatement.setBigDecimal(2, BigDecimal.ZERO); // Initial loan balance is 0.00
+            insertStatement.setBigDecimal(3, BigDecimal.TWO);
+
+            int affectedRows = insertStatement.executeUpdate();
+            if (affectedRows > 0) {
+                ResultSet generatedKeys = insertStatement.getGeneratedKeys();
+                return generatedKeys.next();
+            } else {
+                return false;
+            }
+
+        } catch (SQLException e) {
+            // Handle SQL exception
+            System.out.println("Loan details failed: " + e.getMessage());
+            return false;
+        }
+    }
     public Integer getActiveAccountID() {
         return activeAccountID;
     }
@@ -185,15 +210,11 @@ public class Controller {
     }
 
     public void setActiveAccountLoanBalance() {
-        String loanBalanceSQL = "SELECT L.loan_balance " +
-                "FROM loans L " +
-                "JOIN accounts A ON L.account_id = A.account_id " +
-                "JOIN users U ON A.account_number = U.phone_number " +
-                "WHERE U.phone_number = ?";
+        String loanBalanceSQL = "SELECT loan_balance FROM loans WHERE account_id = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(loanBalanceSQL)) {
-            preparedStatement.setString(1, getActiveAccountNumber());
+            preparedStatement.setInt(1, getActiveAccountID());
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
