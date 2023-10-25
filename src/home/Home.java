@@ -20,7 +20,7 @@ public class Home extends Dashboard {
     }
 
     void userLogin() {
-        System.out.print("Enter Account Number: ");
+        System.out.print("\nEnter Account Number: ");
         String accNumber = choiceInput.nextLine();
         System.out.print("Enter Pin Code: ");
         String pinCode = choiceInput.nextLine();
@@ -39,18 +39,29 @@ public class Home extends Dashboard {
     }
 
     void userSignup() {
-        System.out.println("Enter Full Name: ");
+        System.out.print("Enter Full Name: ");
         String fullName = choiceInput.nextLine();
 
-        System.out.println("Enter Phone Number: ");
+        System.out.print("Enter Phone Number: ");
         String phoneNumber = choiceInput.nextLine();
 
-        System.out.println("Enter Pin Code: ");
+        System.out.print("Enter Pin Code: ");
         String pinCode = choiceInput.nextLine();
 
         if (userSignup.createUser(fullName, phoneNumber, pinCode)) {
-            System.out.println("Signup Success!");
-            userLogin();
+            System.out.println("\nSignup Success![1] Login\n[C] Cancel");
+            String loginChoice = choiceInput.nextLine();
+
+            switch (loginChoice) {
+                case "1":
+                    userLogin();
+                    break;
+                case "C", "c":
+                    System.out.println("Cancelled");
+                    break;
+                default:
+                    System.out.println("Wrong input");
+            }
         } else {
             System.out.println("Error signing up.");
         }
