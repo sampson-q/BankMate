@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="e04a3ffc-c697-47fa-98e6-4ea4b93db951" name="Changes" comment="user signup...">
-      <change afterPath="$PROJECT_DIR$/src/BankMateMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/UserLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BankMate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BankMate.iml" afterDir="false" />
-=======
-    <list default="true" id="e04a3ffc-c697-47fa-98e6-4ea4b93db951" name="Changes" comment="codebase...">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BankMateMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankMateMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/UserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UserLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/deposit/Deposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/deposit/Deposit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/home/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/home/Home.java" afterDir="false" />
->>>>>>> interface
+      <change beforePath="$PROJECT_DIR$/src/withdrawal/Withdrawal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/withdrawal/Withdrawal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,17 +30,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-<<<<<<< HEAD
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
-=======
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
+    &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
     &quot;assignee&quot;: &quot;sampson-q&quot;
-  }
-}</component>
+    }
+    }</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -58,9 +45,8 @@
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
->>>>>>> interface
+    &quot;associatedIndex&quot;: 1
+    }</component>
   <component name="ProjectId" id="2XBLh7QAinnSljHSZJ99kmUWJIL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -73,8 +59,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/hash/Downloads/mysql-connector-j-8.1.0/mysql-connector-j-8.1.0.jar",
+    "git-widget-placeholder": "withdrawal",
+    "last_opened_file_path": "C:/Users/Chusmi/IdeaProjects/mysql-connector-j-8.1.0.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
