@@ -49,7 +49,7 @@ public class Home extends Dashboard {
         String pinCode = choiceInput.nextLine();
 
         if (userSignup.createUser(fullName, phoneNumber, pinCode)) {
-            System.out.println("\nSignup Success![1] Login\n[C] Cancel");
+            System.out.println("\nSignup Success!\n[1] Login\n[C] Cancel");
             String loginChoice = choiceInput.nextLine();
 
             switch (loginChoice) {
