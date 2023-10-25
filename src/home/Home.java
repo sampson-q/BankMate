@@ -49,18 +49,25 @@ public class Home extends Dashboard {
         String pinCode = choiceInput.nextLine();
 
         if (userSignup.createUser(fullName, phoneNumber, pinCode)) {
-            System.out.println("\nSignup Success!\n[1] Login\n[C] Cancel");
-            String loginChoice = choiceInput.nextLine();
+            controller.setActiveUserID(phoneNumber);
+            controller.setActiveAccountNumber(phoneNumber);
 
-            switch (loginChoice) {
-                case "1":
-                    userLogin();
-                    break;
-                case "C", "c":
-                    System.out.println("Cancelled");
-                    break;
-                default:
-                    System.out.println("Wrong input");
+            if (controller.saveAccountDetails()) {
+                System.out.println("\nSignup Success!\n[1] Login\n[C] Cancel");
+                String loginChoice = choiceInput.nextLine();
+
+                switch (loginChoice) {
+                    case "1":
+                        userLogin();
+                        break;
+                    case "C", "c":
+                        System.out.println("Cancelled");
+                        break;
+                    default:
+                        System.out.println("Wrong input");
+                }
+            } else {
+                System.out.println("Account creation failed");
             }
         } else {
             System.out.println("Error signing up.");
